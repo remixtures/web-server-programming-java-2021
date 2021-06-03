@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/layout :: head('Tracks')">
+        <meta charset="UTF-8" />
+        <title>title</title>
+    </head>
+    <body>
+        <header th:replace="fragments/layout :: header">
+            <p>menu</p>
+        </header>
+
+        <main>            
+            <div th:replace="fragments/layout :: table(tracks=${tracks})"></div>
+
+            <h2>Add a track</h2>
+            <form th:action="@{/tracks}" method="POST">
+                <table>
+                    <tr>
+                        <th>Band</th><td><input type="text" name="band"/></td>
+                    </tr>
+                    <tr>
+                        <th>Title</th><td><input type="text" name="title"/></td>
+                    </tr>
+                    <tr>
+                        <th>Released (in format yyyy-MM-dd)</th><td><input type="date "name="released"/></td>
+                    </tr>
+                    <tr>
+                        <th>Duration in seconds</th><td><input type="number" name="durationInSeconds"/></td>
+                    </tr>
+                    <tr>
+                        <td></td><td><input type="submit" value="Add new track!"/></td>
+                    </tr>
+
+                </table>
+            </form>
+        </main>
+
+    </body>
+</html>

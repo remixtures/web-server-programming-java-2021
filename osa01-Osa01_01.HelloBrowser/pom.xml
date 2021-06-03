@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>wad</groupId>
+    <artifactId>Osa01_01.HelloBrowser</artifactId>
+    <name>Osa01_01.HelloBrowser</name>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        
+        <!-- TMC -->
+        <dependency>
+            <groupId>fi.helsinki.cs.tmc</groupId>
+            <artifactId>edu-test-utils</artifactId>
+            <version>0.4.2</version>
+            <scope>test</scope>
+        </dependency>
+    
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>tmc</id>
+            <name>TMC repo</name>
+            <url>https://maven.mooc.fi/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>tmc</id>
+            <name>TMC repo</name>
+            <url>https://maven.mooc.fi/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+</project>

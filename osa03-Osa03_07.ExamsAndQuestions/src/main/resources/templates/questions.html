@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Questions</title>
+    </head>
+    <body>
+
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+
+        <h1>Question list</h1>
+
+        <ul>
+            <li th:each="question : ${questions}">
+                <span th:text="${question.title}">title</span>
+                <pre th:utext="${question.content}">content</pre>
+            </li>
+        </ul>
+
+        <h1>Add a question</h1>
+
+        <form th:action="@{/questions}" method="POST">
+            <p>Title: <input name="title"></input></p>
+            <p>Content: <textarea name="content"></textarea></p>
+            <input type="submit" value="Add"></input>
+        </form>
+
+    </body>
+</html>

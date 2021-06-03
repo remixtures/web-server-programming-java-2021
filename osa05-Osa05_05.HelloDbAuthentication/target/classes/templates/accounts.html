@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>Accounts</title>
+    </head>
+    <body>
+
+        <h2>Accounts</h2>
+
+        <ol>
+            <li th:each="account : ${accounts}">
+                <span th:text="${account.username}">msg</span>
+            </li>
+        </ol>
+
+        <form method="POST" th:action="@{/accounts}">
+            <input type="text" name="username"/>
+            <input type="password" name="password"/>
+            <input type="submit" value="Add new account!"/>
+        </form>
+    </body>
+</html>

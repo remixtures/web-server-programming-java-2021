@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Person database</title>
+    </head>
+
+    <body>
+        <h1>/sons</h1>
+
+        <ul>
+            <li th:each="person: ${persons}"><span th:text="${person.name}">name</span></li>
+        </ul>
+
+        <h2>Add new</h2>
+
+        <form th:action="@{/}" method="POST">
+            <input type="text" name="name"/>
+            <input type="submit" value="Add!"/>
+        </form>
+    </body>
+</html>

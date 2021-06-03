@@ -1,0 +1,5 @@
+tasks/DefaultController.class
+tasks/TaskRepository.class
+tasks/TaskApplication.class
+tasks/TaskController.class
+tasks/Task.class

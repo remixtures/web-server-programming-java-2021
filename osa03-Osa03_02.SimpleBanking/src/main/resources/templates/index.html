@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Clients and their accounts</title>
+    </head>
+
+    <body>
+        <h1>Simple Banking</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Client name</th>
+                    <th>Account name</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+
+            <tbody th:each="client : ${clients}">
+                <tr th:each="account : ${client.accounts}">
+                    <td th:text="${client.name}">Client name</td>
+                    <td th:text="${account.iban}">Account iban</td>
+                    <td th:text="${account.balance}">Account balance</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <h2>Add an account to a client</h2>
+
+        <p>If the account does not exist, it will be created.</p>
+
+        <form th:action="@{/}" method="POST">
+            <span>Client name:</span><br/>
+            <input type="text" name="name"/><br/>
+            <span>Account iban:</span><br/>
+            <input type="text" name="iban"/><br/>
+
+            <input type="submit" value="Add!"/>
+        </form>
+    </body>
+</html>

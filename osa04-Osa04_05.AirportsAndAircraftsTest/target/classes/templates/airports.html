@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Airports</title>
+    </head>
+    <body>
+        <h1>Airports</h1>
+
+        <h2>Add new airport</h2>
+
+        <div>
+            Enter information and press submit:<br/>
+            <form th:action="@{/airports}" method="POST">
+                Name: <input type="text" name="name" id="name"/><br/>
+                Identifier <input type="text" name="identifier" id="identifier"/><br/>
+                <input type="submit"/>            
+            </form>
+        </div>
+
+        <h2>Current airports</h2>
+
+        <ol>
+            <li th:each="airport : ${airports}">
+                <span th:text="${airport.name}">airport name</span> (<span th:text="${airport.identifier}">identifier</span>)<br/>
+                Aircrafts:
+                <ul>
+                    <li th:each="aircraft: ${airport.aircrafts}" th:text="${aircraft.name}">aircraft at this airport</li>
+                </ul>
+            </li>
+        </ol>
+
+        <p><a th:href="@{/aircrafts}">Aircrafts</a></p>
+    </body>
+</html>

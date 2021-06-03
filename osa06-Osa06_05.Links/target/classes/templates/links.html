@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Links</title>
+    </head>
+    <body>
+        <main>
+            <h2>Links</h2>
+            <ul>
+                <li th:each="link: ${links}">
+                    <strong><a th:href="${link.url}" th:text="${link.title}">title</a></strong>
+                    <p th:text="${link.description}">description</p>
+                </li>
+            </ul>
+
+            <section>
+                <h2>Add a new link</h2>
+                <form th:action="@{/links}" method="POST">
+                    Title:<br/>
+                    <input type="text" name="title"/><br/>
+                    Description:<br/>
+                    <textarea name="description"></textarea><br/>
+                    URL:<br/>
+                    <input type="text" name="url"/>
+                    <input type="submit" value="Submit!"/>
+                </form>
+            </section>
+        </main>
+
+    </body>
+</html>

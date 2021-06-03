@@ -1,0 +1,5 @@
+gifbin/GifBinApplication.class
+gifbin/DefaultController.class
+gifbin/GifController.class
+gifbin/GifRepository.class
+gifbin/Gif.class

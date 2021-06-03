@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Orders</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+
+        <h2>Past orders sent to ..</h2>
+
+        <ul>
+            <li th:each="order : ${orders}" th:text="${order.name}">user name</li>
+        </ul>
+
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head(title)">
+        <meta charset="UTF-8" />
+        <title th:text="${title}">Title</title>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <nav>
+                <ul>
+                    <li>
+                        <a th:href="@{/}">Main page</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/tracks}">Tracks</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/playlists}">Playlists</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div th:fragment="table(tracks)">
+            <h2>Tracks</h2>
+            <table>
+                <tr>
+                    <th>Band</th>
+                    <th>Title</th>
+                    <th>Released</th>
+                    <th>Duration in Seconds</th>
+                </tr>
+                <tr th:each="track : ${tracks}">
+                    <td th:text="${track.band}"></td>
+                    <td th:text="${track.title}"></td>
+                    <td th:text="${#temporals.format(track.released, 'yyyy-MM-dd')}"></td>
+                    <td th:text="${track.durationInSeconds}"></td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

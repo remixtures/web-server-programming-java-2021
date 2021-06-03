@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Books</title>
+    </head>
+    <body>
+        <h1>A random book!</h1>
+
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td id="title">NA</td>
+            </tr>
+            <tr>
+                <td>Author:</td>
+                <td id="author">NA</td>
+            </tr>
+            <tr>
+                <td>Pages:</td>
+                <td id="pages">NA</td>
+            </tr>
+        </table>
+
+        <button onclick="getRandomBook()">Get a new book</button>
+
+        <h2>Add a new book</h2>
+
+        <form th:action="@{/books}" method="POST">
+            Title:<br/>
+            <input type="text" name="title"/><br/>
+            Author:<br/>
+            <input type="text" name="author"/><br/>
+            Number of pages:<br/>
+            <input type="number" name="pages"/><br/>
+            <input type="submit" value="Add"/>
+        </form>
+
+        <script th:inline="javascript"> var contextRoot = /*[[@{/}]]*/ '';</script>
+        <script th:src="@{/javascript/books.js}" defer></script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TodoApplication</title>
+    </head>
+
+    <body>
+        <h1>TodoApplication</h1>
+
+        <table>
+            <tr>
+                <th>Task name</th>
+                <th></th>
+            </tr>
+
+            <tr th:each="item : ${items}">
+                <td><a th:href="@{/{item}(item=${item.id})}" th:text="${item.name}">Item name</a></td>
+            </tr>
+        </table>
+
+
+        <h2>Add a task</h2>
+
+        <form th:action="@{/}" method="POST">
+            <span>Name:</span>
+            <input type="text" name="name"/>
+            <input type="submit" value="Add!"/>
+        </form>
+    </body>
+</html>

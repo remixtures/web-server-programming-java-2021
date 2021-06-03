@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Pankit</title>
+    </head>
+
+    <body>
+        <h1>Pankit</h1>
+
+        <ul>
+            <li th:each="pankki: ${pankit}">
+                <a th:href="@{/pankit/{id}(id=${pankki.id})}">
+                    <span th:text="${pankki.nimi}">pankin nimi</span>
+                </a>
+            </li>
+        </ul>
+
+        <h2>Luo uusi</h2>
+
+        <form th:action="@{/pankit}" method="POST">
+            <input type="text" name="nimi"/>
+            <input type="submit" value="Lisää!"/>
+        </form>
+    </body>
+</html>

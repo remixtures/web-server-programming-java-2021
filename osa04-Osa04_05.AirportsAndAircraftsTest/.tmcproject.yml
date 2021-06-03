@@ -1,0 +1,5 @@
+force_new_sandbox: true
+show_all_files_in_solution: true
+extra_student_files:
+  - src/test/java/airports/AirportServiceTest.java
+  - src/test/java/airports/AircraftControllerTest.java

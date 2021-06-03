@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Le Dance Signup</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <h1>Sign up for Le Dance!</h1>
+
+        <form action="#" th:action="@{/registrations}" th:object="${registration}" method="POST">
+            <table>
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" th:field="*{name}" /></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Virheviesti</td>
+                </tr>
+                <tr>
+                    <td>Address </td>
+                    <td><input type="text" th:field="*{address}" /></td>
+                    <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}">Address Virheviesti</td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input type="text" th:field="*{email}" /></td>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Virheviesti</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

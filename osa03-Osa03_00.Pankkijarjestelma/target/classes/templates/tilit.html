@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Tilit</title>
+    </head>
+
+    <body>
+        <h1>Tilit</h1>
+
+        <ul>
+            <li th:each="tili: ${tilit}">
+                <a th:href="@{/tilit/{id}(id=${tili.id})}">
+                    Tili: <span th:text="${tili.id}">tilin id</span>, 
+                    Saldo: <span th:text="${tili.saldo}">saldo</span>,
+                    Omistajia <span th:text="${tili.omistajat.size()}">lukumäärä</span>
+                </a>
+            </li>
+        </ul>
+
+        <h2>Luo uusi</h2>
+
+        <form th:action="@{/tilit}" method="POST">
+            <select name="pankkiId">
+                <option th:each="pankki : ${pankit}" 
+                        th:text="${pankki.nimi}" 
+                        th:value="${pankki.id}">
+                    Pankin nimi
+                </option>
+            </select>
+            <input type="submit" value="Lisää!"/>
+        </form>
+    </body>
+</html>

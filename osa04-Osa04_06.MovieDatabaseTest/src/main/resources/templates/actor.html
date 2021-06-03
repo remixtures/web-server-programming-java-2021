@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title th:text="${actor.name}">JCVD</title>
+    </head>
+    <body>
+
+        <h1>Actor <span th:text="${actor.name}">JCVD</span></h1>
+
+        <h2>Movies</h2>
+
+        <div>
+            <ul>
+                <li th:each="movie : ${actor.movies}" th:text="${movie.name}"></li>
+            </ul>
+        </div>
+
+        <div th:if="${not #lists.isEmpty(movies)}">
+
+            <h2>Assign to movie</h2>
+
+            <form method="POST" th:action="@{/actors/{actorId}/movies(actorId=${actor.id})}">
+                <select name="movieId">
+                    <option th:each="movie : ${movies}" th:value="${movie.id}" th:text="${movie.name}">movie</option>
+                </select>
+                <input type="submit" value="Assign" id="add-to-movie"/>
+            </form>
+        </div>
+
+        <div><a href="/actors">Actors</a></div>
+
+    </body>
+
+</html>

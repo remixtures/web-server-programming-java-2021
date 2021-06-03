@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${tili.id}">Tilin id</title>
+    </head>
+
+    <body>
+        <h1 th:text="${'Tili ' + tili.id}">Tilin tunnus</h1>
+
+        <p>
+            Saldo: <span th:text="${tili.saldo}">0</span>.
+        </p>
+        <p>
+            Pankki: <span th:text="${tili.pankki.nimi}">Pankin nimi</span>.
+        </p>
+
+        <p>
+            Tilin omistajat
+        </p>
+        <ul>
+            <li th:each="henkilo: ${tili.omistajat}">
+                <span th:text="${henkilo.nimi}">Omistajan nimi</span>
+            </li>
+        </ul>
+
+        <p>
+            Siirrä rahaa
+        </p>
+
+        <form th:action="@{/tilit/{id}/siirra(id=${tili.id})}" method="POST">
+            <input type="number" name="summa" placeholder="0.0" step="0.01" min="0" th:max="${tili.saldo}"/>
+            <select name="minneId">
+                <option th:each="kohdeTili : ${tilit}" 
+                        th:text="${kohdeTili.id}" 
+                        th:value="${kohdeTili.id}">
+                    Tilin tunnus
+                </option>
+            </select>
+            <input type="submit" value="Siirrä!"/>
+        </form>
+
+        <h2>Lisää uusi omistaja</h2>
+        <ul>
+            <li th:each="henkilo: ${henkilot}">
+                <form th:action="@{/tilit/{id}/omistajat/{omistajaId}(id=${tili.id},omistajaId=${henkilo.id})}" method="POST">
+                    <input type="submit" th:value="${'Lisää omistajaksi ' + henkilo.nimi}"/>
+                </form>
+            </li>
+        </ul>
+
+    </body>
+</html>

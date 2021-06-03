@@ -1,0 +1,10 @@
+movies/MovieController.class
+movies/MovieRepository.class
+movies/MovieDatabaseApplication.class
+movies/Actor.class
+movies/ActorService.class
+movies/DefaultController.class
+movies/MovieService.class
+movies/Movie.class
+movies/ActorController.class
+movies/ActorRepository.class

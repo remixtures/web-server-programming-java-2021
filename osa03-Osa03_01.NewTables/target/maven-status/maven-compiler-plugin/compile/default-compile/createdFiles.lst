@@ -1,0 +1,6 @@
+newtables/NewTablesController.class
+newtables/NewTablesApplication.class
+newtables/StudentRepository.class
+newtables/Course.class
+newtables/Student.class
+newtables/CourseRepository.class

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Post 'it Notes!</title>
+    </head>
+
+    <body>
+        <h1>Post 'it Notes!</h1>
+
+        <ul>
+            <li th:each="item: ${list}" th:text="${item}">Text here</li>
+        </ul>
+
+        <h2>Add note</h2>
+
+        <form th:action="@{/}" method="POST">
+            <input type="text" name="data"/>
+            <input type="submit" value="Click!"/>
+        </form>
+    </body>
+</html>

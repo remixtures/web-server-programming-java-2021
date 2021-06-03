@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Actors</title>
+    </head>
+    <body>
+        <h1>Actors</h1>
+
+        <h2>Add new actor</h2>
+
+        <div>
+            Enter information and press submit:<br/>
+            <form action="/actors" method="POST">
+                Name: <input type="text" name="name" id="name"/><br/>
+                <input type="submit"/>
+            </form>
+        </div>
+
+        <h2>Existing actors</h2>
+
+        <ol>
+            <li th:each="actor : ${actors}">
+                <a th:href="@{/actors/{actorId}(actorId=${actor.id})}" th:text="${actor.name}">actor name</a>
+
+                <form th:action="@{/actors/{actorId}(actorId=${actor.id})}" th:method="DELETE">
+                    <input type="submit" value="Remove" th:id="${'remove-' + actor.id}"/>
+                </form><br/>
+
+                Known for:<br/>
+                <ul>
+                    <li th:each="movie : ${actor.movies}" th:text="${movie.name}">movie name</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div><a href="/movies">Movies</a></div>
+    </body>
+</html>

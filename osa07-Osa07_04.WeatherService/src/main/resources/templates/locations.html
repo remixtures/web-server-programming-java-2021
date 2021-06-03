@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>Lorem ipsum</title>
+    </head>
+    <body>
+
+        <h3>Locations</h3>
+        <ul>
+            <li th:each="location : ${locations}"><a th:href="@{/locations/{id}(id=${location.id})}" th:text="${location.name}">Kumpula</a></li>
+        </ul>
+
+        <div th:replace="fragments/template :: locationForm">
+            location form
+        </div>
+    </body>
+</html>

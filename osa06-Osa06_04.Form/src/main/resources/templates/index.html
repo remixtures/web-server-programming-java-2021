@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="fragments/layout :: head">
+        <meta charset="UTF-8" />
+        <title>Layout</title>
+    </head>
+    <body>
+        <header th:replace="fragments/layout :: header">
+            <p>menu</p>
+        </header>
+
+        <main>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1>Welcome</h1> 
+                    <p>Here is some text</p> 
+                </div>
+            </div>
+            
+            <section class="container">
+                And here is some more text...
+            </section>
+        </main>
+
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head" lang="en">
+        <meta charset="UTF-8" />
+        <title>Layout</title>
+    </head>
+    <body>
+        <header th:fragment="header">            
+            <a th:href="@{/index}">Main page</a> | 
+            <a th:href="@{/list}">List</a> |
+            <a th:href="@{/form}">Form</a>
+        </header>  
+        
+        <section th:fragment="section">
+            <h1>Super site!</h1>
+            <p>Super site is one of the best sites on the internet now!</p>
+        </section>
+        
+        
+        <footer th:fragment="footer">
+            &copy; Epic web developers paid by the hour!
+        </footer>
+     
+    </body>
+</html>

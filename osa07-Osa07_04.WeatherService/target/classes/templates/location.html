@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title th:text="${location.name}">Lorem ipsum</title>
+
+        <style>
+            #map {
+                width: 400px;
+                height: 400px;
+            }
+        </style>
+
+        <!-- leaflet on JavaScript-kirjasto karttojen näyttämiseen, kts. https://leafletjs.com/ -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    </head>
+    <body>
+
+        <div th:replace="fragments/template :: navigation">
+            navigation
+        </div>
+
+        <h2 th:text="${location.name}">Kumpula</h2>
+
+        <div id="map"></div>
+
+        <script th:inline="javascript">
+            var lat = /*[[${location.latitude}]]*/ 1.0;
+            var lon = /*[[${location.longitude}]]*/ 1.0;
+
+            var map = L.map('map').setView([lat, lon], 13);
+            var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap',
+                maxZoom: 18,
+            });
+            tiles.addTo(map);
+
+            var locationMarker = L.marker([lat, lon]).addTo(map);
+            var locationName = /*[[${location.name}]]*/ "unknown";
+            locationMarker.bindPopup("<b>" + locationName + "</b>").openPopup();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Items</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+
+        <h1>Items</h1>
+
+        <ul>
+            <li th:each="item : ${items}">
+                <span th:text="${item.name}">item</span> (<span th:text="${item.price}">999</span>$)
+                <form th:action="@{/cart/items/{id}(id=${item.id})}" th:method="POST">
+                    <input type="submit" value="Add to cart"/>
+                </form>
+            </li>
+        </ul>
+
+    </body>
+</html>

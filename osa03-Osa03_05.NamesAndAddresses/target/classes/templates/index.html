@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Names and addresses</title>
+    </head>
+
+    <body>
+        <h1>Names and addresses</h1>
+
+        <ul>
+            <li th:each="person : ${persons}">
+                <span th:text="${person.firstName}">first</span> 
+                <span th:text="${person.lastName}">last</span> 
+                lives at
+                <span th:text="${person.address.street}">street</span>
+            </li>
+        </ul>
+        
+    </body>
+</html>

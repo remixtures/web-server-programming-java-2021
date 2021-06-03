@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Hello List!</title>
+    </head>
+
+    <body>
+        <h1>Hello List!</h1>
+
+        <!-- lisää toiminnallisuus listalla olevien arvojen listaamiseen tänne -->
+        <ul th:each="item: ${list}">
+            <li th:text="${item}"></li>
+        </ul>
+
+        <!-- Älä koske alla olevaan lomakkeeseen, tutustumme 
+        tiedon lisäämiseen hieman myöhemmin -->
+        <h2>Add content to list</h2>
+
+        <form th:action="@{/}" method="POST">
+            <input type="text" name="content"/>
+            <input type="submit" value="Click!"/>
+        </form>
+    </body>
+</html>

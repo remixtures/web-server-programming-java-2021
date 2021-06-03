@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Reload Heroes</title>
+    </head>
+    <body>
+
+        <h2>Reload Heroes: <span id="name" th:text="${status.name}">you</span></h2>
+
+        <h3>Reloads: <span id="reloads" th:text="${status.reloads}">0</span></h3>
+
+
+        <h2>Scoreboard</h2>
+
+        <ol>
+            <li th:each="score : ${scores}" th:text="${score.name + ', ' + score.reloads + ' reloads'}">user and reloads</li>
+        </ol>
+
+    </body>
+</html>

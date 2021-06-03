@@ -1,0 +1,6 @@
+filemanager/File.class
+filemanager/FileRepository.class
+filemanager/DefaultController.class
+filemanager/FileController.class
+filemanager/FileManagerApplication.class
+filemanager/Solution.class

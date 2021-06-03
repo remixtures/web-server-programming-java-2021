@@ -1,0 +1,6 @@
+registration/RegistrationApplication.class
+registration/Registration.class
+registration/RegistrationRepository.class
+registration/SuccessController.class
+registration/RegistrationController.class
+registration/DefaultController.class

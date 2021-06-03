@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Reservations</title>
+    </head>
+    <body>
+
+        <h1>Current reservations</h1>
+
+        <ul>
+            <li th:each="reservation: ${reservations}">
+                <span th:text="${#temporals.format(reservation.reservationFrom, 'yyyy-MM-dd') + ' - ' + #temporals.format(reservation.reservationTo, 'yyyy-MM-dd') + ' by ' + reservation.user.username}"></span>
+            </li>
+        </ul>
+
+        <h1>Add a reservation</h1>
+
+        <form th:action="@{/reservations}" method="POST">
+            <p>From: <input type="date" name="reservationFrom"></input></p>
+            <p>To: <input type="date" name="reservationTo"></input></p>
+            <input type="submit" value="Add"></input>
+        </form>
+
+    </body>
+</html>

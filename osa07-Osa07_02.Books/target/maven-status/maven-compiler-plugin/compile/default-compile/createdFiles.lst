@@ -1,0 +1,4 @@
+books/BooksApplication.class
+books/Book.class
+books/BookRepository.class
+books/BooksController.class

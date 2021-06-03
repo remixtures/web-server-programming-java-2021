@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>GifBin</title>
+    </head>
+    <body>
+
+        <h2>GifBin (<span th:text="${count}">count</span> images)</h2>
+
+        <div th:if="${current != null}">
+            <img th:src="@{/gifs/{id}/content(id=${current})}"/>
+        </div>
+
+        <div th:if="${previous != null}">
+            <a th:href="@{/gifs/{id}(id=${previous})}">Previous</a>
+        </div>
+
+        <div th:if="${next != null}">
+            <a th:href="@{/gifs/{id}(id=${next})}">Next</a>
+        </div>
+
+        <h2>Add new content</h2>
+
+        <form method="POST" th:action="@{/gifs}" enctype="multipart/form-data">
+            <input type="file" name="file" id="file"/>
+            <input type="submit" value="Add!"/>
+        </form>
+    </body>
+</html>

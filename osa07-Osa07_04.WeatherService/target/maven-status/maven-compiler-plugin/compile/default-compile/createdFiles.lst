@@ -1,0 +1,8 @@
+weatherservice/DefaultController.class
+weatherservice/LocationService.class
+weatherservice/WeatherEntryRepository.class
+weatherservice/LocationRepository.class
+weatherservice/LocationController.class
+weatherservice/WeatherServiceApplication.class
+weatherservice/WeatherEntry.class
+weatherservice/Location.class

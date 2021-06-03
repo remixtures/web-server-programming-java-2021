@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Bank transfer</title>
+    </head>
+
+    <body>
+        <h1>Accounts and balances</h1>
+
+        <table>
+            <tr>
+                <th>Account name</th>
+                <th>Balance</th>
+            </tr>
+            <tr th:each="account : ${accounts}">
+                <td th:text="${account.iban}">Account iban</td>
+                <td th:text="${account.balance}">Account balance</td>
+            </tr>
+        </table>
+
+
+        <h2>Transfer money</h2>
+
+        <form th:action="@{/}" method="POST">
+            <span>From:</span><br/>
+            <select name="from">
+                <option th:each="account: ${accounts}" th:value="${account.iban}" 
+                        th:text="${account.iban}" >Options</option>
+            </select><br/>
+
+            <span>To:</span><br/>
+            <select name="to">
+                <option th:each="account: ${accounts}" th:value="${account.iban}" 
+                        th:text="${account.iban}" >Options</option>
+            </select><br/>
+
+            <span>Amount:</span><br/>
+            <input type="number" name="amount"/><br/>
+
+            <input type="submit" value="Add!"/>
+        </form>
+    </body>
+</html>

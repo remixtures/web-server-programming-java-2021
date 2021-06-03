@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:text="${pankki.nimi}">Pankin nimi</title>
+    </head>
+
+    <body>
+        <h1 th:text="${pankki.nimi}">Pankin nimi</h1>
+
+        <p>
+            Pankin konttorit:
+        </p>
+        <ul>
+            <li th:each="konttori: ${pankki.konttorit}">
+                <span th:text="${konttori.osoite}">Konttorin osoite</span>
+            </li>
+        </ul>
+
+        <h2>Luo uusi konttori</h2>
+
+        <form th:action="@{/pankit/{id}/konttorit(id=${pankki.id})}" method="POST">
+            <input type="text" name="osoite"/>
+            <input type="submit" value="Lisää!"/>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Items</title>
+    </head>
+
+    <body>
+        <h1>Items</h1>
+
+        <ol>
+            <li th:each="item: ${items}">
+                <a th:href="@{/{id}(id=${item.identifier})}" th:text="${item.name}">name</a> (<span th:text="${item.type}">type</span>)
+            </li>
+        </ol>
+
+
+        <h2>Add item</h2>
+
+        <form th:action="@{/}" method="POST">
+            <span>Name:</span>
+            <input type="text" name="name"/>
+            <span>Type:</span>
+            <input type="text" name="type"/>
+            <input type="submit" value="Add!"/>
+        </form>
+    </body>
+</html>

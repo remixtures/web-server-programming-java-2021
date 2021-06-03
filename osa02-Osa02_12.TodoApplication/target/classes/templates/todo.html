@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TodoApplication</title>
+    </head>
+
+    <body>
+        <h1 th:text="${item.name}">item name</h1>
+
+        <p>Item has been checked a total of <span th:text="${item.checked}">-1</span> times.</p>
+
+        <a th:href="@{/}">Back to listing.</a>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Exam</title>
+    </head>
+    <body>
+
+        <header th:replace="fragments/header :: header">
+            <p>header with links etc</p>
+        </header>
+
+        <h1 th:text="${exam.subject + ' ' + exam.examDate}">Exam subject and date</h1>
+
+        <h2>Questions</h2>
+
+        <section th:each="question: ${exam.questions}">
+            <h3 th:text="${question.title}">title</h3>
+
+            <p th:utext="${question.content}">content</p>
+        </section>
+
+        <h2>Add an existing question to exam</h2>
+
+        <ul>
+            <li th:each="question: ${questions}">
+                <span th:text="${question.title}">title</span>
+                <form th:action="@{/exams/{examId}/questions/{questionId}(examId=${exam.id},questionId=${question.id})}" method="POST">
+                    <input type="submit" value="Add"></input>
+                </form>
+            </li>
+        </ul>
+
+    </body>
+</html>
