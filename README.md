@@ -12,6 +12,7 @@ Albeit the course is originally in Finnish, Google Translate helped me a lot wit
 
 **5 - HTTP protocol and cookies. Authentication and authorization:** Why can we say that HTTP is a stateless protocol. What are cookies and what are they used for. The differences between authentication and authorization. How to create an application that asks the user to sign in. How to define paths and methods that require the user of a web app to log in and hide parts of the view from different user groups.
 
-**6 - Repeating structures and fragments. Using CSS style sheets. Input validation. REST interfaces.**
+**6 - Repetitive code structures and fragments. Using CSS style sheets. Input validation. REST interfaces.** What methods are available for defining and reusing repetitive code structures. What Twitter Bootstrap is and how to use it to define styles in a web application. What methods are available for validating form data. What is an interface. What are REST interfaces. How to implement a service that provides data over a RESTful interface.
 
-**7 - Browser software and server software. Web application security. Scalability of applications. Reactive programming.**
+**7 - Browser software and server software. Web application security. Scalability of applications. Reactive programming.**  How to make a JavaScript request from the browser to the server. How to update the view displayed in the browser based on the response to the Javascript request. What are the most common vulnerabilities in web applications and the factors that affect them (OWASP). What methods can be used for scaling applications to large sets of users. What are the basics of reactive programming. How to develop a simple server software with a reactive programming paradigm.
+
