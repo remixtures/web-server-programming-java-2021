@@ -10,7 +10,7 @@ Albeit the course is originally in Finnish, Google Translate helped me a lot wit
 
 4 - Media types and file storage. The Software development process, layered architecture and automated application testing. Sending an application to the Web: What is a Media Type and how to handle files in a database. What are the main stages of the software development process. The most popular Web development design patterns. What is the meaning of a multi-tier software architecture. How to divide parts of an application into different web services. How to writer automated tests. How to deploy an application. 
 
-5 - HTTP protocol and cookies. Authentication and authorization: Why can we say that HTTP is a stateless protocol. What are cookies and what are they used for. The differences between authentication and authorization. How to create an application that asks the user to sign in. How to define paths and methods that require the user of a web app to log in, and hide parts of the view from different user groups.
+5 - HTTP protocol and cookies. Authentication and authorization: Why can we say that HTTP is a stateless protocol. What are cookies and what are they used for. The differences between authentication and authorization. How to create an application that asks the user to sign in. How to define paths and methods that require the user of a web app to log in and hide parts of the view from different user groups.
 
 6 - Repeating structures and fragments. Using CSS style sheets. Input validation. REST interfaces.
 
